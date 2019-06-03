@@ -15,6 +15,7 @@ export class MovieService {
 
   getMovies(query:any): Observable<Movie[]> {
     let url = this.moviesUrl;
+    if(query)
     if(query.action == "genre"){
       url = `${url + '?genres='}${query.value}`
     }
@@ -41,7 +42,6 @@ export class MovieService {
   getMovieByKey(key:string): Observable<Movie> {
     return this.http.get<Movie[]>(`${this.moviesUrl + '?key='}${key}`)
       .pipe(
-
         // tap(data => console.log(JSON.stringify())),
         map(
           data => data[0]

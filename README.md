@@ -1,8 +1,8 @@
 # Movies Application  
 
-Application utilizing Angular 7, Angular OnPush change detection strategy, Smart/Dumb components, Redux (NgRx Store/Effects/Router Store), RxJS, SCSS,  
+Application utilizing Angular 7, Angular OnPush change detection strategy, Smart/Dumb components, Redux (NgRx Store/Effects/Router Store), RxJS, SCSS, Redux Dev Tools
 
-## Running the Application 
+## Running the Application  
 
 git clone https://github.com/fairmutex/Movie-App.git  
    
@@ -10,7 +10,17 @@ cd movie-app
    
 npm install   
    
-ng s   
+ng s    
+
+http://localhost:4200/          
+   
+## Running Tests
+
+npm test   
+   
+or   
+
+ng test --environment=test   
    
 It is also hosted [here](http://code.fairmutex.com/projects/web/movie-app/)   
    
@@ -22,7 +32,7 @@ Media files are not in the repository, so an internet connection is required eve
    
 This was created with the mindset that it is not a system for production so I was experimenting with UX in reducing clicks required to enjoy the experience. (not the usual kind of content delivery).  
    
-The following is only for large screens:    
+The following is only for large screens > 800px:    
 Application is in the middle of the orange rectangle and is displayed only if the mouse is hovering.   
    
 I just learned the hard way about Video playing in Firefox and IE, so it works best in Chrome with less favourable fall backs for the rest.  
@@ -48,6 +58,10 @@ Static paging of such data powered by Redux is simple using a strategy such as t
 but when any of Page Size, Sorting, filtering and Search is altered. The state must be cleared and the backend would need to be hit again.
 
 I did start working on it [here](https://stackblitz.com/edit/angular-ubwakn) to extend my own [tabular Library](https://github.com/fairmutex/FTable)  but I haven't connected the table service to NgRx powered by a backend as I figured this needs some ideas to mature first and ..... time.   
+
+## Testing   
+   
+Unit Testing is mainly done on the service and an attempt to test other things was made, but more knowledge is required with regards to mocking things and e2e.
    
 ## Lessons Learned   
    

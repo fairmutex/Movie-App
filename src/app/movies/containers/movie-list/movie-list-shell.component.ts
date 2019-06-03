@@ -32,10 +32,7 @@ import { Router, ActivatedRoute } from '@angular/router';
     }
  
     movieSelected(movie:Movie){
-
-      // this.router.navigate(['details', movie.key], { relativeTo: this.route });
       this.router.navigate(['/movies/details', movie.key],  { relativeTo: this.route });
-      // this.router.navigate(['../../movies/details', movie.key],  { relativeTo: this.route });
     }
   
 

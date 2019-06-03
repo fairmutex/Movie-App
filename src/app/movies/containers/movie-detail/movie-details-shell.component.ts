@@ -30,6 +30,5 @@ import { Router } from '@angular/router';
       this.store.dispatch(new movieActions.ToggleMute(value));
     }
   
-  
   }
   
