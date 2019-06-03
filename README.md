@@ -4,7 +4,7 @@ Application utilizing Angular 7, Angular OnPush change detection strategy, Smart
 
 ## Running the Application 
 
-git clone   
+git clone https://github.com/fairmutex/Movie-App.git  
    
 cd movie-app   
    
