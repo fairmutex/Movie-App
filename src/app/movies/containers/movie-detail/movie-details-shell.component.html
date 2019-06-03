@@ -2,7 +2,7 @@
         <div class=''>
           <ma-movie-detail
           [movie]="selectedMovie$ | async"
-          [errorMessage]="errorMessage$ | async"
+          [errorMessage]="errorMessages$ | async"
           [mute]="mute$ | async"
           (muteClicked)="muteChanged($event)">
         </ma-movie-detail>

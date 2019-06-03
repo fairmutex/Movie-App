@@ -2,7 +2,7 @@
     <div class=''>
       <ma-movie-list
       [movies]="movies$ | async"
-      [errorMessage]="errorMessage$ | async"
+      [errorMessage]="errorMessages$ | async"
       (selected)="movieSelected($event)">
     </ma-movie-list>
     </div>
