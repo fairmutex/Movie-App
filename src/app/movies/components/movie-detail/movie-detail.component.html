@@ -1,0 +1,22 @@
+<button class='btn' [routerLink]="['../..']" title="Back to Movie List"><i style='pointer-events:none;' class="fas fa-chevron-left fa-lg" aria-hidden="true"></i></button>
+<button class='btn' title="Mute/Unmute" (click)="toggleMute(!mute)">
+   <i style='pointer-events:none;' [ngClass]="mute ? 'fa-volume-mute': 'fa-volume-up'" class="fas fa-lg" aria-hidden="true"></i>
+</button>
+<div class='movie-detail'>
+    <div class='movie-detail-image'> 
+        <!-- <img *ngIf="movie" [src]="'./assets/images/movie-covers/'+movie?.img" [alt]="movie?.name" /> -->
+        <img *ngIf="movie" [src]="'http://code.fairmutex.com/projects/web/movie-app/assets/images/movie-covers/'+movie?.img" [alt]="movie?.name" />
+        
+    </div>
+        <div class='movie-detail-info'>
+            <h1>{{movie?.name}}</h1>
+            <ma-star class='rating' [num]='movie?.rate'></ma-star>
+            <div class='duration'>
+                {{movie?.length}}
+            </div>
+            <div class='description'>
+                {{movie?.description}}
+            </div>
+        </div>
+</div>
+<!-- {{movie |json}} -->

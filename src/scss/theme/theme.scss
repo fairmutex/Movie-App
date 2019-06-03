@@ -1,0 +1,67 @@
+/*
+ * Global application theme.
+ * Framework overrides and customization goes here.
+ */
+
+ * {
+    font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+    font-weight:100; 
+
+ }
+
+ body{
+     background-color: $main-color;
+ }
+
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-top: 0;
+    letter-spacing: .3rem;
+}
+
+.btn{
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    background-color:$content-color-1; 
+    color: white;
+
+
+    font-size: 2rem;
+    line-height: 3.5rem;
+    width: 3.5rem;
+    @media (min-width: 800px) {
+        font-size: 1rem;
+        line-height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    margin-left:2px;
+    margin-right:2px;
+
+
+  
+    &:disabled{
+      opacity: 0.65;
+    }
+
+    &:hover {
+        background-color: darken($content-color-1,5%);
+        i {
+         // margin-left: 1.25em;
+          background-color: darken($content-color-1,5%);
+        } 
+      }
+      &:active {
+       background-color: $content-color-1;
+        i {
+        background-color: $content-color-1;
+        } 
+      }
+}
+

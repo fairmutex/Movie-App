@@ -1,0 +1,10 @@
+<div class=''>
+        <div class=''>
+          <ma-movie-detail
+          [movie]="selectedMovie$ | async"
+          [errorMessage]="errorMessage$ | async"
+          [mute]="mute$ | async"
+          (muteClicked)="muteChanged($event)">
+        </ma-movie-detail>
+        </div>
+      </div>

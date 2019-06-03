@@ -1,0 +1,58 @@
+// CSS Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+@import "./theme/theme-variables";
+@import "./theme/theme";
+
+@import "./features/movie-layout";
+@import "./features/movie-grid.scss";
+@import "./features/movie-box";
+@import "./features/video";
+
+
+
+@import "./features/scrollbar.scss";
+
+
+.inputWithIcon {
+    
+     position: relative;
+    & input{
+    padding-right:40px;
+    }
+    & select{
+        padding-right:40px;
+        }
+    & + i{
+         color: $secondary-colour;
+    }
+
+    & i{
+        position:absolute;
+        top:15px;
+        right:15px;
+        padding: 9px 8px;
+        color:$content-color-1;
+        transition:.3s;
+    }
+
+    &:focus {
+            border-color: $content-color-1;
+            box-shadow: 0 0 8px 0 $content-color-1;
+        & +i{
+        color:$content-color-1;
+        }
+    }
+}
+
+
+
+select {
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+}

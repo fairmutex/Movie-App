@@ -1,0 +1,43 @@
+.movie-box {
+    $movieboxcolour: $secondary-colour;
+    background-color: black;
+    color: #fff;
+    height: 320px;
+    overflow: hidden;
+
+    & .rating{
+        padding-bottom:$padding;
+        text-align: center;
+        font-size: 2rem;
+        
+    }
+
+    &:hover{
+        background-color: darken($movieboxcolour, 10%);
+    }
+    &:active{
+        background-color: lighten($movieboxcolour, 10%);
+        transform: scale(0.95);
+    }
+    
+
+& > img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:$padding;
+}
+
+
+
+}
+
+
+.stars {
+  
+    .star{
+        color:$content-color-1;
+    }
+
+
+}
