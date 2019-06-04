@@ -3,7 +3,6 @@ import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { Params, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { RouterStateSerializer, RouterReducerState } from '@ngrx/router-store';
 import { Injectable } from '@angular/core';
-// import { RouterStateUrl } from './router.reducer';
 import * as fromRouter from './router.reducer';
 
 export interface State extends fromRoot.State {

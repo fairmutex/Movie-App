@@ -6,14 +6,8 @@ export interface RouterStateUrl {
     url: string;
     params: Params;
     queryParams: Params;
-    // data: Data;
   }
-   
 
-
-// export const routerReducers: ActionReducerMap<RouterStateUrl> = {
-//     router: routerReducer
-//   };
   
 // State
 export interface RouterState {

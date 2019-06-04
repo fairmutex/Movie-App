@@ -22,7 +22,7 @@ or
 
 ng test --environment=test   
    
-It is also hosted [here](http://code.fairmutex.com/projects/web/movie-app/)   
+It is also hosted [here](https://code.fairmutex.com/projects/web/movie-app/)   
    
 ## Media  
 
@@ -65,7 +65,7 @@ Unit Testing is mainly done on the service and an attempt to test other things w
    
 ## Lessons Learned   
    
-Exposure to NgRx and already feel that this would minimize service clutter and to keep in mind how to design dump/smart Components comensurate with OnPush change Detection strategy for better performance.   
+Exposure to NgRx and already feel that this would minimize service clutter and to keep in mind how to design dumb/smart Components comensurate with OnPush change Detection strategy for better performance.   
 
 ## Could Haves  
 

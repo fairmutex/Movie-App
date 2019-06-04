@@ -1,7 +1,7 @@
 <!-- <video #videoplayer  [poster]="'./assets/images/movie-posters/'+(selectedMovie$ | async)?.img" id="bgvid" playsinline autoplay [muted]='muteTrailer$ | async'>
   <source [src]="'./assets/videos/movie-trailers/'+(selectedMovie$ | async)?.key+'.mp4'" type="video/mp4">
 </video> -->
-<video #videoplayer [src]="'http://code.fairmutex.com/projects/web/movie-app/assets/videos/movie-trailers/'+(selectedMovie$ | async)?.key+'.mp4'" [poster]="'http://code.fairmutex.com/projects/web/movie-app/assets/images/movie-posters/'+(selectedMovie$ | async)?.img" id="bgvid" playsinline autoplay [muted]='muteTrailer$ | async'>
+<video #videoplayer [src]="'https://code.fairmutex.com/projects/web/movie-app/assets/videos/movie-trailers/'+(selectedMovie$ | async)?.key+'.mp4'" [poster]="'https://code.fairmutex.com/projects/web/movie-app/assets/images/movie-posters/'+(selectedMovie$ | async)?.img" id="bgvid" playsinline autoplay [muted]='muteTrailer$ | async'>
 
 </video> 
 
@@ -12,7 +12,7 @@
                 <ol>
                     <li>
                         <div class="inputWithIcon">
-                            <input type="search" required="" name="search" class="search-field" autocomplete="off" #moviesearch placeholder="e.g Fight Club" value="" (keyup)="checkIfSearchIsEmpty(moviesearch.value)" (keyup.enter)="search(moviesearch.value)">
+                            <input type="text" required="" name="search" class="search-field" autocomplete="off" #moviesearch placeholder="e.g Fight Club" value="" (keyup)="checkIfSearchIsEmpty(moviesearch.value)" (keyup.enter)="search(moviesearch.value)">
                             <i class="fas fa-search fa-lg" aria-hidden="true" (click)="search(moviesearch.value)"></i>
                         </div>
                     </li>
