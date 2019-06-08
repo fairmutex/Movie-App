@@ -9,6 +9,7 @@ import { Input, Component } from '@angular/core';
     <span class='star star-enabled' *ngIf="num > 4">&#9733;</span>
     <span class='star star-enabled' *ngIf="num > 6">&#9733;</span>
     <span class='star star-enabled' *ngIf="num > 8">&#9733;</span>
+    <span class='star star-disabled' *ngIf="num == 0">&#9734;</span>
     <span class='star star-disabled' *ngIf="num <= 2">&#9734;</span>
     <span class='star star-disabled' *ngIf="num <= 4">&#9734;</span>
     <span class='star star-disabled' *ngIf="num <= 6">&#9734;</span>
