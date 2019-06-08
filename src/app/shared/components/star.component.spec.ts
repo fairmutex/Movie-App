@@ -8,7 +8,7 @@ describe('StarComponent', () => {
   
     let fixture: ComponentFixture<HostComponent>;
     const getStarsElement = () : HTMLElement => fixture.debugElement.query(By.css('.stars')) ? fixture.debugElement.query(By.css('.stars')).nativeElement : null
-    var getEnabledStarsElement  =() : DebugElement[] => fixture.debugElement.query(By.css('.star-enabled')) ? fixture.debugElement.queryAll(By.css('.star-enabled')) : null
+    const getEnabledStarsElement  =() : DebugElement[] => fixture.debugElement.query(By.css('.star-enabled')) ? fixture.debugElement.queryAll(By.css('.star-enabled')) : null
     const getDisabledStarsElement = () : DebugElement[] => fixture.debugElement.query(By.css('.star-disabled')) ? fixture.debugElement.queryAll(By.css('.star-disabled')): null
 
     beforeEach(() => {
@@ -54,8 +54,7 @@ describe('StarComponent', () => {
          });
       });
   
-//   });
-  
+ 
   @Component({ selector: 'host-for-test', template: '' })
   class HostComponent {
   }

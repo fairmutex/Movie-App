@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { KeysFilterPipe } from './pipes/keys-filter.pipe';
 import { StarComponent } from './components/star.component';
 
 
@@ -11,11 +10,10 @@ import { StarComponent } from './components/star.component';
         CommonModule
     ],
     declarations: [
-        KeysFilterPipe,
+     
         StarComponent,
     ],
     exports: [
-        KeysFilterPipe,
         StarComponent
     ],
 

@@ -20,7 +20,7 @@
                         <div class="inputWithIcon">
                             <select (change)="genre($event.target.value)" #select>
                                 <option value="" selected disabled hidden>By Genre</option>
-                                <option *ngFor="let item of categories | keysFilter" [value]="item.value">{{item.value | titlecase}}</option>
+                                <option *ngFor="let item of categories | keyvalue" [value]="item.value">{{item.value | titlecase}}</option>
                             </select>
                             <i style='pointer-events:none;' class="fas fa-chevron-down fa-lg" aria-hidden="true"></i>
 
