@@ -63,11 +63,21 @@ I did start working on it [here](https://stackblitz.com/edit/angular-ubwakn) to 
 
 ## Testing   
    
-Unit Testing is mainly done on the service and an attempt to test other things was made, but more knowledge is required with regards to mocking things and e2e.
+Testing MovieService with mocking Httpclient module and check checks although I still don't see this replacing real integration testing with a real API like in movie.service.old.spec.ts
 
+Dumb Components both shallow and deep for the first two.  
+MovieDetailComponent, MovieListComponent and StarComponent  
 
+Movie State
+Actions, Reducers and Selectors.
 
+Testing Effects is still in progress
+
+Testing Shell components in the pipeline
+E2E is still in the pipeline.
    
+How much testing is too few/much testing?   
+     
 ## Lessons Learned   
    
 Exposure to NgRx and already feel that this would minimize service clutter and to keep in mind how to design dumb/smart Components comensurate with OnPush change Detection strategy for better performance.   

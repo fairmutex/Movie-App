@@ -79,7 +79,8 @@ export class Load implements Action {
   // }
 
 
-export type MovieActions = SetCurrentMovie 
+export type MovieActions = 
+  SetCurrentMovie 
 | InitializeCurrentMovie
 | ToggleMute
 | Load

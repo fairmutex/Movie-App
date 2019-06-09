@@ -73,11 +73,6 @@ describe('Movie Selectors', () => {
 
         expect(store.select).toHaveBeenCalledWith(getError);
     });
-  
-  
-
-
-
-
+    
   });
 });
