@@ -7,7 +7,6 @@ import { Movie } from '../../movie.model';
   styleUrls: ['./movie-detail.component.scss']
 })
 export class MovieDetailComponent {
-  pageTitle = 'Movie';
   @Input() errorMessage: string;
   @Input() movie: Movie;
   @Input() mute: boolean;

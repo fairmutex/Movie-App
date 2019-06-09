@@ -1,6 +1,6 @@
 
 <div class='movie-box-container'>
-    <div class='movie-box' *ngFor="let movie of movies" (click)="movieSelected(movie)">
+    <div class='movie-box'  [attr.id]="movie?.key" *ngFor="let movie of movies" (click)="movieSelected(movie)">
         <!-- <img [src]="'./assets/images/movie-covers/'+movie?.key+'.jpg'" [alt]="movie?.name" /> -->
         <img [src]="'https://code.fairmutex.com/projects/web/movie-app/assets/images/movie-covers/'+movie?.key+'.jpg'" [alt]="movie?.name" />
         

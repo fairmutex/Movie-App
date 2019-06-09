@@ -2,18 +2,24 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MovieDetailComponent } from './movie-detail.component';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
-import { SharedModule } from 'src/app/shared/shared.module';
-
-
+import { Input, Component } from '@angular/core';
 
 describe('MovieDetailComponent', () => {
   let component: MovieDetailComponent;
   let fixture: ComponentFixture<MovieDetailComponent>;
 
+  @Component({
+    selector:    'ma-star',
+    template: `<div class='stars'></div>`
+  })
+  class FakeStarComponent {
+    @Input() num: number;
+  }
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, SharedModule],
-      declarations: [ MovieDetailComponent ]
+      imports: [RouterTestingModule],
+      declarations: [ MovieDetailComponent ,FakeStarComponent]
     })
     .compileComponents();
   }));
@@ -30,22 +36,7 @@ describe('MovieDetailComponent', () => {
 
   it('should render the movie properties', function () {
     // Act
-    fixture.componentInstance.movie =                 
-    {
-      "id": 1,
-      "key": "deadpool",
-      "name": "Deadpool",
-      "description": "A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelrated healing powers, adopting the alter ego Deadpool.",
-      "genres": [
-          "action",
-          "adventure",
-          "comedy"
-      ],
-      "rate": "8.6",
-      "length": "1hr 48mins",
-      "img": "deadpool.jpg"
-    };
-
+    fixture.componentInstance.movie =  { "id": 1, "key": "deadpool", "name": "Deadpool", "description": "A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelrated healing powers, adopting the alter ego Deadpool.", "genres": [ "action", "adventure", "comedy" ], "rate": "8.6", "length": "1hr 48mins", "img": "deadpool.jpg" };
     fixture.detectChanges();
     // Assert
     expect(fixture.debugElement.query(By.css('img')).nativeElement.getAttribute('src')).toContain("deadpool.jpg");
