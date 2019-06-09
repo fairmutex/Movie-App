@@ -6,7 +6,6 @@ import { Movie } from '../../movie.model';
   templateUrl: './movie-list.component.html',
 })
 export class MovieListComponent {
-  pageTitle = 'Movies';
   @Input() errorMessage: string;
   @Input() movies: Movie[];
 

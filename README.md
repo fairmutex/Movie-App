@@ -1,3 +1,5 @@
+[![License][license-image]][license-url] 
+
 # Movies Application  
 
 Application utilizing Angular 7, Angular OnPush change detection strategy, Smart/Dumb components, Redux (NgRx Store/Effects/Router Store), RxJS, SCSS, Redux Dev Tools
@@ -12,7 +14,9 @@ npm install
    
 ng s    
 
-http://localhost:4200/          
+http://localhost:4200/    
+
+It is also hosted [here](https://code.fairmutex.com/projects/web/movie-app/)   
    
 ## Running Tests
 
@@ -21,8 +25,6 @@ npm test
 or   
 
 ng test --environment=test   
-   
-It is also hosted [here](https://code.fairmutex.com/projects/web/movie-app/)   
    
 ## Media  
 
@@ -62,6 +64,9 @@ I did start working on it [here](https://stackblitz.com/edit/angular-ubwakn) to 
 ## Testing   
    
 Unit Testing is mainly done on the service and an attempt to test other things was made, but more knowledge is required with regards to mocking things and e2e.
+
+
+
    
 ## Lessons Learned   
    
@@ -78,3 +83,7 @@ Better, well thought Redux Actions and more features
 for example: Estimating internet speed and if its slow, not playing the trailers http://speed-test.cfapps.io/.   
    
 All videos are taken from https://www.traileraddict.com/ and some posters from google.
+
+[MIT license]: http://opensource.org/licenses/MIT
+[license-image]: https://img.shields.io/badge/license-MIT-green.svg
+[license-url]: http://opensource.org/licenses/MIT

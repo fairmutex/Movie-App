@@ -3,8 +3,11 @@ import { MovieDetailComponent } from './movie-detail.component';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Input, Component } from '@angular/core';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { StarComponent } from 'src/app/shared/components/star.component';
 
-describe('MovieDetailComponent', () => {
+// shallow
+describe('MovieDetailComponent: Shallow', () => {
   let component: MovieDetailComponent;
   let fixture: ComponentFixture<MovieDetailComponent>;
 
@@ -74,3 +77,42 @@ describe('MovieDetailComponent', () => {
     expect(fixture.componentInstance.muteClicked.emit).toHaveBeenCalledWith(false);
   });
 });
+
+
+
+
+
+// Deep
+describe('MovieDetailComponent: Deep', () => {
+  let component: MovieDetailComponent;
+  let fixture: ComponentFixture<MovieDetailComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule, SharedModule],
+      declarations: [ MovieDetailComponent]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(MovieDetailComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should render the movie rate as a StarComponent', function () {
+    // Act
+    fixture.componentInstance.movie =  { "id": 1, "key": "deadpool", "name": "Deadpool", "description": "A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelrated healing powers, adopting the alter ego Deadpool.", "genres": [ "action", "adventure", "comedy" ], "rate": "8.6", "length": "1hr 48mins", "img": "deadpool.jpg" };
+    fixture.detectChanges();
+    // Assert
+    expect(fixture.debugElement.query(By.directive(StarComponent))).toBeDefined();
+    expect(fixture.debugElement.query(By.directive(StarComponent)).componentInstance.num).toBe('8.6');
+  });
+
+});
+
