@@ -26,6 +26,7 @@ export class MovieShellComponent implements OnInit {
    }
 
    genre(value:string) {
+      console.log(value);
       this.router.navigate(['genre',value], { relativeTo: this.route });
    }
 

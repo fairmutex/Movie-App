@@ -14,7 +14,6 @@ import { Router, ActivatedRoute } from '@angular/router';
   export class MovieListShellComponent implements OnInit {
       errorMessages$: Observable<string>;
       movies$: Observable<Movie[]>;
-      selectedMovie$: Observable<Movie>;
   
     constructor(private store:Store<fromMovie.State>,
                 private router: Router,
@@ -22,20 +21,16 @@ import { Router, ActivatedRoute } from '@angular/router';
                 }
   
     ngOnInit() {
-       this.route.params.subscribe(val => {
+        this.route.params.subscribe(val => {
         this.store.dispatch(new movieActions.Load());
         this.movies$ = this.store.pipe(select(fromMovie.getMovies));
         this.errorMessages$ = this.store.pipe(select(fromMovie.getError));
-        this.selectedMovie$ = this.store.pipe(select(fromMovie.getCurrentMovie));
-       
-       });
+        });
     }
  
     movieSelected(movie:Movie){
       this.router.navigate(['/movies/details', movie.key],  { relativeTo: this.route });
     }
-  
-
   
   }
   

@@ -2,7 +2,7 @@
 
 # Movies Application  
 
-Application utilizing Angular 7, Angular OnPush change detection strategy, Smart/Dumb components, Redux (NgRx Store/Effects/Router Store), RxJS, SCSS, Redux Dev Tools
+Application utilizing Angular 7, Angular OnPush change detection strategy, Smart/Dumb components, Redux (NgRx Store/Effects/Router Store), RxJS, SCSS, Redux Dev Tools, Jasmine, Jasmine Marbles and Karma
 
 ## Running the Application  
 
@@ -25,7 +25,11 @@ npm test
 or   
 
 ng test --environment=test   
-   
+
+## Code Coverage   
+
+ng test --code-coverage   
+    
 ## Media  
 
 Media files are not in the repository, so an internet connection is required even after cloning the repository.
@@ -44,7 +48,7 @@ I just learned the hard way about Video playing in Firefox and IE, so it works b
 ### Assumptions   
    
 API is only sending a subset of the data and not full records   
-So Searching, filtering and Get Record by category must hit the backend   
+So Searching, filtering and Get Record and a new page must hit the backend   
    
    
 The Effects are using routing data supplied NgRx Router Store from the state to execute backend calls. Keeping routing state in the store merges routing state and application state into one and work in tandem.
@@ -62,25 +66,30 @@ but when any of Page Size, Sorting, filtering and Search is altered. The state m
 I did start working on it [here](https://stackblitz.com/edit/angular-ubwakn) to extend my own [tabular Library](https://github.com/fairmutex/FTable)  but I haven't connected the table service to NgRx powered by a backend as I figured this needs some ideas to mature first and ..... time.   
 
 ## Testing   
+     
+47 specs, a mix of Unit/Shallow Integration/Deep Integration tests    
    
-Testing MovieService with mocking Httpclient module and check checks although I still don't see this replacing real integration testing with a real API like in movie.service.old.spec.ts
+Testing MovieService with mocking Httpclient module and checks, although I still don't see this replacing real integration testing with a real API like in movie.service.old.spec.ts but somehow it fails at times when it should pass something async is missing.
 
 Dumb Components both shallow and deep for the first two.  
 MovieDetailComponent, MovieListComponent and StarComponent  
 
 Movie State
-Actions, Reducers and Selectors.
+Actions, Reducers, Selectors and Effects.
 
-Testing Effects is still in progress
+Effects still missing testing of errors
 
 Testing Shell components in the pipeline
+
 E2E is still in the pipeline.
    
 How much testing is too few/much testing?   
      
 ## Lessons Learned   
    
-Exposure to NgRx and already feel that this would minimize service clutter and to keep in mind how to design dumb/smart Components comensurate with OnPush change Detection strategy for better performance.   
+Exposure to NgRx and already feel that this would minimize service clutter and to keep in mind how to design dumb/smart Components comensurate with OnPush change Detection strategy for better performance.
+
+Testing Unit/Shallow Integration and Deep Integration using Jasmine/Jasmine Marbles and Karma
 
 ## Could Haves  
 
