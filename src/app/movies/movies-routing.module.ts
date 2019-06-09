@@ -9,7 +9,7 @@ import { MovieDetailsShellComponent } from './containers/movie-detail/movie-deta
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { SharedModule } from '../shared/shared.module';
 
-const routes: Routes = [
+export const routes: Routes = [
       {
         path: '',
         component: MovieShellComponent,

@@ -7,7 +7,6 @@ import { MovieListComponent } from './movie-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StarComponent } from 'src/app/shared/components/star.component';
 
-
 // shallow
 describe('MovieListComponent: Shallow', () => {
   let component: MovieListComponent;
@@ -25,7 +24,6 @@ describe('MovieListComponent: Shallow', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
       ],
       declarations: [ 
         MovieListComponent,
@@ -114,6 +112,7 @@ describe('MovieListComponent: Deep', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });

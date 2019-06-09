@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Input, Component } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StarComponent } from 'src/app/shared/components/star.component';
+import * as MOVIES from "../../../data/movie.mock-data.json";
 
 // shallow
 describe('MovieDetailComponent: Shallow', () => {
@@ -13,7 +14,7 @@ describe('MovieDetailComponent: Shallow', () => {
 
   @Component({
     selector:    'ma-star',
-    template: `<div class='stars'></div>`
+    template: `<div></div>`
   })
   class FakeStarComponent {
     @Input() num: number;
@@ -21,8 +22,13 @@ describe('MovieDetailComponent: Shallow', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [ MovieDetailComponent ,FakeStarComponent]
+      imports: [
+        RouterTestingModule
+      ],
+      declarations: [ 
+        MovieDetailComponent,
+        FakeStarComponent
+      ]
     })
     .compileComponents();
   }));
@@ -39,7 +45,7 @@ describe('MovieDetailComponent: Shallow', () => {
 
   it('should render the movie properties', function () {
     // Act
-    fixture.componentInstance.movie =  { "id": 1, "key": "deadpool", "name": "Deadpool", "description": "A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelrated healing powers, adopting the alter ego Deadpool.", "genres": [ "action", "adventure", "comedy" ], "rate": "8.6", "length": "1hr 48mins", "img": "deadpool.jpg" };
+    fixture.componentInstance.movie =  MOVIES[0];
     fixture.detectChanges();
     // Assert
     expect(fixture.debugElement.query(By.css('img')).nativeElement.getAttribute('src')).toContain("deadpool.jpg");

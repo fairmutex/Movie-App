@@ -4,11 +4,13 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MovieData } from './data/movie-data';
 import { MovieService } from "./movie.service";
 
-describe('MovieService', () => {
+describe('MovieService Old', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            providers: [MovieService],
+            providers: [
+                MovieService
+            ],
             imports: [
                 HttpClientTestingModule,  
                 HttpClientInMemoryWebApiModule.forRoot(MovieData, { delay: 0 })

@@ -1,72 +1,61 @@
-// import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
-// import { StoreModule, Store, combineReducers } from '@ngrx/store';
-// import { MovieDetailsShellComponent } from './movie-details-shell.component';
-// import { RouterTestingModule } from '@angular/router/testing';
-// import { MovieDetailComponent } from '../../components/movie-detail/movie-detail.component';
-// import { SharedModule } from 'src/app/shared/shared.module';
-// import { provideMockStore, MockStore } from '@ngrx/store/testing';
-// import * as movieActions from '../../state/movie.actions';
-// import * as fromMovie from '../../state';
-// import { MovieState } from '../../state/movie.reducer';
-// import { reducer } from '../../state/movie.reducer';
-// import * as fromRoot from '../../../state/app.state';
-// import { Router } from '@angular/router';
-// describe('MovieDetailsShellComponent', () => {
-//   let component: MovieDetailsShellComponent;
-//   let fixture: ComponentFixture<MovieDetailsShellComponent>;
-//   let store: MockStore<fromMovie.State>;
-//   let router: Router;
-//   beforeEach(async(() => {
-    
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MovieDetailsShellComponent } from './movie-details-shell.component';
+import { Input, Output, EventEmitter, Component } from '@angular/core';
+import { Movie } from '../../movie.model';
+import { provideMockStore, MockStore } from '@ngrx/store/testing';
+import { of } from 'rxjs';
+import * as MOVIES from "../../../data/movie.mock-data.json";
 
-//     const initialState: MovieState = {
-//         currentMovie: null,
-//         currentMovieId: null,
-//         movies: [],
-//         error:'',
-//         muteTrailer: false
-//     }
-    
-//     TestBed.configureTestingModule({
-//         imports:[
-//             RouterTestingModule.withRoutes([
-//                     { path: 'details/:key', component: MovieDetailsShellComponent },
-//             ]),
-//             SharedModule,
-//             StoreModule.forRoot({          ...fromRoot,
-//                 feature: combineReducers(reducer),}
-//                )],
-//             declarations: [ MovieDetailsShellComponent,MovieDetailComponent ],
-//             providers: [provideMockStore({ initialState }),]
-//     })
-//     .compileComponents();
+describe('MovieDetailsShellComponent', () => {
+  let component: MovieDetailsShellComponent;
+  let fixture: ComponentFixture<MovieDetailsShellComponent>;
 
-//     store = TestBed.get(Store);
-//     spyOn(store, 'dispatch').and.callThrough();
-//     fixture = TestBed.createComponent(MovieDetailsShellComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   }));
- 
 
- 
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
+
+
+  @Component({
+    selector:    'ma-movie-detail',
+    template: `<div></div>`
+  })
+  class FakeMovieDetailComponent {
+    @Input() errorMessage: string;
+    @Input() movie: Movie;
+    @Input() mute: boolean;
+    @Output() muteClicked = new EventEmitter<boolean>();
+  }
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ 
+          MovieDetailsShellComponent ,
+          FakeMovieDetailComponent
+        ],
+      providers:[
+        provideMockStore({} )
+      ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(MovieDetailsShellComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+//   it('mute change called', () => {
+//      this.selectedMovie$ = of(MOVIES[0] as Movie);
+//      this.mute$ = of(false);
+//      component.muteChanged(true);
+//      spyOn(store, 'dispatch');
+//      expect(store.dispatch).toHaveBeenCalledWith([this.mute$]);
 //   });
 
-//   it('should dispatch an GetMovieByKey action on creation', fakeAsync((): void => {
-//     // router.navigateByUrl('/details/deadpool');
-//     const router = TestBed.get(Router);
-//     router.url = '/movies/details/deadpool';
-//     component.ngOnInit();
-//     tick();
-//     expect(store.dispatch).toHaveBeenCalledWith(movieActions.GetMovieByKey);
-//   }));
 
-
-//   it('should dispatch an action to refreshing data', () => {
-//     const action = new movieActions.ToggleMute(false);
-//     expect(store.dispatch).toHaveBeenCalledWith(false);
-//   });
-// });
+});

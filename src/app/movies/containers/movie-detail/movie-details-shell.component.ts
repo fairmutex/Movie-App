@@ -4,7 +4,6 @@ import * as fromMovie from '../../state';
 import * as movieActions from '../../state/movie.actions';
 import { Movie } from '../../movie.model';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,8 +15,7 @@ import { Router } from '@angular/router';
       selectedMovie$: Observable<Movie>;
       mute$: Observable<boolean>;
   
-    constructor(private store:Store<fromMovie.State>,
-                private router: Router) { }
+    constructor(private store:Store<fromMovie.State>) { }
   
     ngOnInit() {
       this.store.dispatch(new movieActions.GetMovieByKey());

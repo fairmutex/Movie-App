@@ -74,12 +74,12 @@ Testing MovieService with mocking Httpclient module and checks, although I still
 Dumb Components both shallow and deep for the first two.  
 MovieDetailComponent, MovieListComponent and StarComponent  
 
+Testing Shell components incomplete. encountered a very weird situation in which when tests of MovieShellComponent are not commented MovieService tests are failing and these two are totally unrelated .
+
 Movie State
 Actions, Reducers, Selectors and Effects.
 
 Effects still missing testing of errors
-
-Testing Shell components in the pipeline
 
 E2E is still in the pipeline.
    

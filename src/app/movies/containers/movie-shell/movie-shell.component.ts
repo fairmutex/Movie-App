@@ -26,7 +26,6 @@ export class MovieShellComponent implements OnInit {
    }
 
    genre(value:string) {
-      console.log(value);
       this.router.navigate(['genre',value], { relativeTo: this.route });
    }
 
@@ -35,8 +34,9 @@ export class MovieShellComponent implements OnInit {
    }
 
    checkIfSearchIsEmpty(value:string) {
-   if(value.length === 0)
-   this.router.navigate(['..'], { relativeTo: this.route });
+      if(value.length === 0) {
+         this.router.navigate(['..'], { relativeTo: this.route });
+      }
    }
 
 }
