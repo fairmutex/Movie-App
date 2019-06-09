@@ -12,7 +12,6 @@ export enum GenreType {
 	Thriller = "thriller"
 };
 
-
 export interface Movie {
 	id: number | null;
 	key: string;

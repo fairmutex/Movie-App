@@ -10,7 +10,6 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
 import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
-
       {
         path: '',
         component: MovieShellComponent,
@@ -20,7 +19,6 @@ const routes: Routes = [
             { path: ':action/:value', component: MovieListShellComponent }
         ]
       }
-  
   ];
 
 @NgModule({
@@ -29,7 +27,9 @@ const routes: Routes = [
       RouterModule.forChild(routes),
       SharedModule
     ],
-    exports: [RouterModule],
+    exports: [
+      RouterModule
+    ],
     declarations: [
       MovieShellComponent,
       MovieListShellComponent,
