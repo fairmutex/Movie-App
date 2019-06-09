@@ -1,60 +1,61 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { TestBed, ComponentFixture } from "@angular/core/testing";
 import { StarComponent } from './star.component';
-import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 
 describe('StarComponent', () => {
   
-    let fixture: ComponentFixture<HostComponent>;
-    const getStarsElement = () : HTMLElement => fixture.debugElement.query(By.css('.stars')) ? fixture.debugElement.query(By.css('.stars')).nativeElement : null
-    const getEnabledStarsElement  =() : DebugElement[] => fixture.debugElement.query(By.css('.star-enabled')) ? fixture.debugElement.queryAll(By.css('.star-enabled')) : null
-    const getDisabledStarsElement = () : DebugElement[] => fixture.debugElement.query(By.css('.star-disabled')) ? fixture.debugElement.queryAll(By.css('.star-disabled')): null
+    let fixture: ComponentFixture<StarComponent>;
 
     beforeEach(() => {
+      // Arrange
       TestBed.configureTestingModule({
-        declarations: [HostComponent, StarComponent],
+        declarations: [StarComponent],
       });
+      fixture = TestBed.createComponent(StarComponent);
+    });
+
+
+    it('should create', () => {
+      // Assert
+      expect(fixture.componentInstance).toBeTruthy();
     });
   
-    function createHostComponent( template : string ) : ComponentFixture<HostComponent> {
-        TestBed.overrideComponent(HostComponent, { set: { template: template } });
-        const fixture = TestBed.createComponent(HostComponent);
-        fixture.detectChanges();
-        return fixture as ComponentFixture<HostComponent>;
-      }
-    
+    it('should have 0 Enabled 5 Disabled stars', function () {
+      // Act
+      fixture.componentInstance.num = 0;
+      fixture.detectChanges();
+      // Assert
+      expect(fixture.debugElement.queryAll(By.css('.star-enabled')).length).toEqual(0);
+      expect(fixture.debugElement.queryAll(By.css('.star-disabled')).length).toEqual(5);
+      // Or
+      expect(fixture.nativeElement.querySelectorAll('.star-enabled').length).toEqual(0);
+      expect(fixture.nativeElement.querySelectorAll('.star-disabled').length).toEqual(5);
+    });
 
-        it('should display the stars', () => {
-            const template = '<ma-star [num]="0"></ma-star>';
-          fixture = createHostComponent(template);
-          expect(getStarsElement()).toBeDefined();
-        });
-    
-        it('should have 0 Enabled 5 Disabled stars', function () {
-          const template = '<ma-star [num]="0"></ma-star>';
-          fixture = createHostComponent(template);
-          expect(getEnabledStarsElement()).toBeNull();
-          expect(getDisabledStarsElement().length).toEqual(5);
-        });
-
-        it('should have 0 Disabled  5 Enabled stars', function () {
-            const template = '<ma-star [num]="10"></ma-star>';
-            fixture = createHostComponent(template);
-            expect(getEnabledStarsElement().length).toEqual(5);
-            expect(getDisabledStarsElement()).toBeNull();
-         });
+    it('should have 0 Disabled  5 Enabled stars', function () {
+      // Act          
+      fixture.componentInstance.num = 10;
+      fixture.detectChanges();
+      // Assert
+      expect(fixture.debugElement.queryAll(By.css('.star-enabled')).length).toEqual(5);
+      expect(fixture.debugElement.queryAll(By.css('.star-disabled')).length).toEqual(0);
+       // Or
+      expect(fixture.nativeElement.querySelectorAll('.star-enabled').length).toEqual(5);
+      expect(fixture.nativeElement.querySelectorAll('.star-disabled').length).toEqual(0);
+    });
 
 
-         it('should have 2 Disabled  3 Enabled stars', function () {
-            const template = '<ma-star [num]="5"></ma-star>';
-            fixture = createHostComponent(template);
-            expect(getEnabledStarsElement().length).toEqual(3);
-            expect(getDisabledStarsElement().length).toEqual(2);
-         });
-      });
-  
- 
-  @Component({ selector: 'host-for-test', template: '' })
-  class HostComponent {
-  }
+    it('should have 2 Disabled  3 Enabled stars', function () {
+      // Act           
+      fixture.componentInstance.num = 5;
+      fixture.detectChanges()
+      // Assert
+      expect(fixture.debugElement.queryAll(By.css('.star-enabled')).length).toEqual(3);
+      expect(fixture.debugElement.queryAll(By.css('.star-disabled')).length).toEqual(2);
+       // Or
+      expect(fixture.nativeElement.querySelectorAll('.star-enabled').length).toEqual(3);
+      expect(fixture.nativeElement.querySelectorAll('.star-disabled').length).toEqual(2);
+    });
+
+});

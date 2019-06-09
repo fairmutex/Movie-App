@@ -5,22 +5,12 @@ import { Movie } from '../../movie.model';
   selector: 'ma-movie-list',
   templateUrl: './movie-list.component.html',
 })
-export class MovieListComponent implements OnInit {
+export class MovieListComponent {
   pageTitle = 'Movies';
   @Input() errorMessage: string;
   @Input() movies: Movie[];
+
   @Output() selected = new EventEmitter<Movie>();
-
-  @Output() checked = new EventEmitter<boolean>();
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-
-  showTrailer(value:boolean){
-    //  this.checked.emit(value);
-  }
 
   movieSelected(movie: Movie): void {
     this.selected.emit(movie);

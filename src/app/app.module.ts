@@ -14,10 +14,12 @@ import { MovieData } from './movies/data/movie-data';
 import { CustomSerializer } from './router-state';
 import { routerReducers } from './router-state/router.reducer';
 import { RouterEffect } from './router-state/router.effects';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
