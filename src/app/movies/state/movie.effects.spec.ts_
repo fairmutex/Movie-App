@@ -1,0 +1,98 @@
+// // Ref  https://christianlydemann.com/the-complete-guide-to-ngrx-testing/
+// import { TestBed, async } from '@angular/core/testing';
+// import { provideMockActions } from '@ngrx/effects/testing';
+// import { cold, hot } from 'jasmine-marbles';
+// import { Observable } from 'rxjs';
+// import { MovieEffects } from './movie.effects';
+// import { Movie } from '../movie.model';
+// import { MovieService } from '../movie.service';
+// import * as movieActions from './movie.actions';
+// import { Store, StoreModule } from '@ngrx/store';
+// import { StoreRouterConnectingModule } from '@ngrx/router-store';
+// import { metaReducers } from 'src/app/state/app.reducer';
+// import { routerReducers } from 'src/app/router-state/router.reducer';
+// import { CustomSerializer } from 'src/app/router-state';
+// import { RouterTestingModule } from '@angular/router/testing';
+// import * as fromRouter from '../../router-state';
+// import { Router } from '@angular/router';
+
+// describe('MovieEffects', () => {
+//   let actions: Observable<any>;
+//   let effects: MovieEffects;
+//   let movieService: jasmine.SpyObj<MovieService>;
+//   let MOVIES;
+//   let router: Router;
+ 
+//   beforeEach(() => {
+//         TestBed.configureTestingModule({
+//             imports: [
+//                 RouterTestingModule.withRoutes([
+                
+//                 ]),
+//                 StoreModule.forRoot( {}, { metaReducers }),
+//                 StoreModule.forFeature('router', routerReducers),
+//                 StoreRouterConnectingModule.forRoot(
+//                   {
+//                      serializer: CustomSerializer,
+//                   }
+//                 )
+//             ],
+//             providers: [
+//               MovieEffects,
+//             //   provideMockStore(        private store:Store<fromRoot.State>,),
+//               provideMockActions(() => actions),
+//               {
+//                 provide: MovieService,
+//                 useValue: {
+//                     getMovies: jasmine.createSpy()
+//                 }
+//               }
+//             ]
+//           });    
+
+
+  
+   
+//       MOVIES = [
+//         { "id": 1, "key": "deadpool", "name": "Deadpool", "description": "A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelrated healing powers, adopting the alter ego Deadpool.", "genres": [ "action", "adventure", "comedy" ], "rate": "8.6", "length": "1hr 48mins", "img": "deadpool.jpg" },
+//         { "id": 2, "key": "we-are-the-millers", "name": "We're the Millers", "description": "A veteran pot dealer creates a fake family as part of his plan to move a huge shipment of weed into the U.S. from Mexico.", "genres": [ "adventure", "comedy", "crime" ], "rate": "7.0", "length": "1hr 50mins", "img": "we-are-the-millers.jpg" },
+//         { "id": 3, "key": "straight-outta-compton", "name": "Straight Outta Compton", "description": "The group NWA emerges from the mean streets of Compton in Los Angeles, California, in the mid-1980s and revolutionizes Hip Hop culture with their music and tales about life in the hood.", "genres": [ "biography", "drama", "history" ], "rate": "8.0", "length": "2hr 27mins", "img": "straight-outta-compton.jpg" },
+//         { "id": 4, "key": "gridiron-gang", "name": "Gridiron Gang", "description": "Teenagers at a juvenile detention center, under the leadership of their counselor, gain self-esteem by playing football together.", "genres": [ "crime", "drama", "sport" ], "rate": "6.9", "length": "2hr 5mins", "img": "gridiron-gang.jpg" },
+//       ];
+//       effects = TestBed.get(MovieEffects);
+//       movieService = TestBed.get(MovieService);
+//       router = TestBed.get(Router);
+//       router.initialNavigation();
+//     });
+
+//   describe('Movies', () => {
+//     it('should succeed loading Movies return LoadSuccess', () => {
+
+        
+
+//       const movies: Movie[] = MOVIES;
+//       const action = new movieActions.Load();
+//       const outcome = new movieActions.LoadSuccess(movies);
+
+//       actions = hot('-a', { a: action });
+//       const response = cold('-a|', { a: movies });
+//       movieService.getMovies.and.returnValue(response);
+
+//       const expected = cold('--b', { b: outcome });
+//       expect(effects.loadMovies$).toBeObservable(expected);
+//     });
+
+//     // it('should fail loading Movies and return LoadFail with the error', () => {
+//     //   const action = new movieActions.Load();
+//     //   const error = new Error('some error') as any;
+//     //   const outcome = new movieActions.LoadFail(error);
+
+//     //   actions = hot('-a', { a: action });
+//     //   const response = cold('-#|', {}, error);
+//     //   movieService.getMovies.and.returnValue(response);
+
+//     //   const expected = cold('--(b|)', { b: outcome });
+//     //   expect(effects.loadMovies$).toBeObservable(expected);
+//     // });
+//   });
+// });

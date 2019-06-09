@@ -11,7 +11,7 @@ export interface MovieState {
     muteTrailer: boolean;
 }
 
-const initialState: MovieState = {
+export const initialState: MovieState = {
     currentMovie: null,
     currentMovieId: null,
     movies: [],

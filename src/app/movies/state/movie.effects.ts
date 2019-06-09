@@ -6,7 +6,6 @@ import { of } from 'rxjs';
 import * as fromRouter from '../../router-state';
 import * as fromRoot from '../../state/app.state';
 
-
 import { mergeMap, map, catchError, withLatestFrom} from "rxjs/operators";
 import { Actions, Effect, ofType} from '@ngrx/effects';
 import { Store, Action } from '@ngrx/store';

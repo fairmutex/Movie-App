@@ -11,7 +11,7 @@ describe('MovieService', () => {
             providers: [MovieService],
             imports: [
                 HttpClientTestingModule,  
-                HttpClientInMemoryWebApiModule.forRoot(MovieData, { delay: 1500 })
+                HttpClientInMemoryWebApiModule.forRoot(MovieData, { delay: 0 })
             ]
         })    
       .compileComponents();
