@@ -12,9 +12,9 @@ cd movie-app
    
 npm install   
    
-ng s    
+ng s --ssl    
 
-http://localhost:4200/    
+https://localhost:4200/    
 
 It is also hosted [here](https://code.fairmutex.com/projects/web/movie-app/)   
    
